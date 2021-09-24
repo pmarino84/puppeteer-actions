@@ -1,0 +1,29 @@
+{
+  "name": "puppeteer-actions",
+  "version": "1.0.0",
+  "description": "Puppeteer utilities library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmarino84/puppeteer-actions.git"
+  },
+  "keywords": [],
+  "author": "Pietro Marino <pietro.marino_84@hotmail.it>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pmarino84/puppeteer-actions/issues"
+  },
+  "homepage": "https://github.com/pmarino84/puppeteer-actions#readme",
+  "peerDependencies": {
+    "puppeteer": "^10.4.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@typescript-eslint/parser": "^4.31.2",
+    "eslint": "^7.32.0",
+    "typescript": "^4.4.3"
+  }
+}
