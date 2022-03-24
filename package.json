@@ -4,13 +4,18 @@
   "description": "Puppeteer utilities library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predoc": "rimraf docs",
+    "doc": "typedoc --out docs src/index.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pmarino84/puppeteer-actions.git"
   },
-  "keywords": [],
+  "keywords": [
+    "puppeteer",
+    "actions"
+  ],
   "author": "Pietro Marino <pietro.marino_84@hotmail.it>",
   "license": "MIT",
   "bugs": {
@@ -21,10 +26,16 @@
     "puppeteer": "^10.4.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.180",
     "@types/puppeteer": "^5.4.4",
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
     "eslint": "^7.32.0",
+    "rimraf": "^3.0.2",
+    "typedoc": "0.21",
     "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
