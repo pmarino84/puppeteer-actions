@@ -1,0 +1,38 @@
+{
+  "name": "@puppeteer-actions/base",
+  "version": "1.0.0",
+  "description": "puppeteer-actions base library",
+  "keywords": [
+    "puppeteer",
+    "actions"
+  ],
+  "author": "pmarino84 <pietro.marino_84@hotmail.it>",
+  "homepage": "https://github.com/pmarino84/puppeteer-actions/tree/main/packages/base#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmarino84/puppeteer-actions.git"
+  },
+  "scripts": {
+    "test": "echo passed!",
+    "predoc": "rimraf docs",
+    "doc": "typedoc --out docs src/index.ts",
+    "build": "tsup-node lib/index.ts --format esm,cjs --dts"
+  },
+  "bugs": {
+    "url": "https://github.com/pmarino84/puppeteer-actions/issues"
+  },
+  "dependencies": {
+    "@puppeteer-actions/core": "*"
+  }
+}
