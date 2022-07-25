@@ -1,11 +1,5 @@
 import { Page } from "puppeteer";
-
-export type ElementWithTextFields = {
-  value: string;
-  textContent: string | null;
-  innerText: string;
-  innerHTML: string;
-};
+import { ElementWithTextFields } from "./types";
 
 /**
  * function that retrieve text of the element field

@@ -1,9 +1,5 @@
 import { Page } from "puppeteer";
-
-export type SelectOptionInfo = {
-  label: string;
-  value: string;
-};
+import { SelectOptionInfo } from "./types";
 
 /**
  * Create a function to retrieve label and value of select options

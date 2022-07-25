@@ -1,6 +1,6 @@
 import { Page, WaitForSelectorOptions } from "puppeteer";
-import createGetOptionsValueToSelectByTextList from "./createGetOptionsValueToSelectByTextList";
-import createWaitForSelectorAndSelect from "./createWaitForSelectorAndSelect";
+import createGetOptionsValueToSelectByTextList from "../GetOptionsValueToSelectByTextList/createGetOptionsValueToSelectByTextList";
+import createWaitForSelectorAndSelect from "../createWaitForSelectorAndSelect";
 
 /**
  * Create function to select given labels

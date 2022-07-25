@@ -9,7 +9,7 @@ export function createGetOptionsValueToSelectByTextList(selectSelector: string) 
   return function getOptionsValueToSelectByTextListInternal(page: Page, textToMatchList: string[]) {
     return page.evaluate((selector, textToFindList) => {
       const elements = document.querySelectorAll<HTMLOptionElement>(`${selector} > option`);
-      const options = Array.from(elements).filter((item) => textToFindList.includes(item.textContent?.trim().toLowerCase()));
+      const options = Array.from(elements).filter((item) => textToFindList.includes(item.textContent?.trim().toLowerCase() as string));
 
       return options.map(option => option.value);
     }, selectSelector, textToMatchList.map(text => text.toLowerCase()));

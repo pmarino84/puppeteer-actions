@@ -1,5 +1,6 @@
 import merge from "lodash/merge";
-import { Page, PageFnOptions } from "puppeteer";
+import { Page } from "puppeteer";
+import { PageFnOptions } from "../types";
 
 const BASE_OPTIONS: PageFnOptions = {
   polling: 100
