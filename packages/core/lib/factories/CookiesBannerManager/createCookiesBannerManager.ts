@@ -1,13 +1,8 @@
-import { Page, PageFnOptions } from "puppeteer";
-import createWaitForSelectorAndClick, { WaitForSelectorAndClickOptions } from "./createWaitForSelectorAndClick";
-import createWaitForVisible from "./createWaitForVisible";
-import createWaitForVisibleStyled from "./createWaitForVisibleStyled";
-
-export type CookiesBannerManagerOptions = {
-  pageFnOptions?: PageFnOptions;
-  acceptButtonOptions?: WaitForSelectorAndClickOptions;
-  declineButtonOptions?: WaitForSelectorAndClickOptions;
-};
+import { Page } from "puppeteer";
+import createWaitForSelectorAndClick from "../createWaitForSelectorAndClick";
+import createWaitForVisible from "../createWaitForVisible";
+import createWaitForVisibleStyled from "../createWaitForVisibleStyled";
+import { CookiesBannerManagerOptions } from "./types";
 
 /**
  * Create a factory of cookie banner manager

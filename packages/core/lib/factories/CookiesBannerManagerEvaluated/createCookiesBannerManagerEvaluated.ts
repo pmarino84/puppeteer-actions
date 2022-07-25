@@ -1,13 +1,8 @@
-import { Page, PageFnOptions, WaitForSelectorOptions } from "puppeteer";
-import createWaitForSelectorAndClickEvaluated from "./createWaitForSelectorAndClickEvaluated";
-import createWaitForVisible from "./createWaitForVisible";
-import createWaitForVisibleStyled from "./createWaitForVisibleStyled";
-
-export type CookiesBannerManagerEvaluatedOptions = {
-  pageFnOptions?: PageFnOptions;
-  acceptButtonWaitOptions?: WaitForSelectorOptions;
-  declineButtonWaitOptions?: WaitForSelectorOptions;
-};
+import { Page } from "puppeteer";
+import createWaitForSelectorAndClickEvaluated from "../createWaitForSelectorAndClickEvaluated";
+import createWaitForVisible from "../createWaitForVisible";
+import createWaitForVisibleStyled from "../createWaitForVisibleStyled";
+import { CookiesBannerManagerEvaluatedOptions } from "./types";
 
 /**
  * {@inheritDoc createCookiesBannerManager}

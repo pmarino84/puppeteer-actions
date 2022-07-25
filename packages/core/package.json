@@ -24,7 +24,7 @@
     "url": "git+https://github.com/pmarino84/puppeteer-actions.git"
   },
   "scripts": {
-    "test": "echo passed!",
+    "test": "jest",
     "predoc": "rimraf docs",
     "doc": "typedoc --out docs src/index.ts",
     "build": "tsup-node lib/index.ts --format esm,cjs --dts"

@@ -1,6 +1,6 @@
-export * from "./createCookiesBannerManager";
-export * from "./createCookiesBannerManagerEvaluated";
-export * from "./createEvaluate";
+export * from "./CookiesBannerManager";
+export * from "./CookiesBannerManagerEvaluated";
+export * from "./Evaluate";
 export * from "./createGetElementText";
 export * from "./createGetOptionsOfSelect";
 export * from "./createGetOptionsValueToSelectByTextList";
@@ -20,3 +20,4 @@ export * from "./createWaitForSelectorAndTypeEvaluated";
 export * from "./createWaitForTimeout";
 export * from "./createWaitForVisible";
 export * from "./createWaitForVisibleStyled";
+export * from "./types";
