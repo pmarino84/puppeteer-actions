@@ -1,4 +1,4 @@
-import { EvaluateFn, Page, SerializableOrJSHandle, WaitForSelectorOptions } from "puppeteer";
+import { ElementHandle, EvaluateFunc, Page, WaitForSelectorOptions } from "puppeteer";
 import createWaitForSelectorAndRun from "./createWaitForSelectorAndRun";
 
 /**
@@ -9,8 +9,8 @@ import createWaitForSelectorAndRun from "./createWaitForSelectorAndRun";
  */
 export function createWaitForSelectorAndRunEvaluated(selector: string, waitOptions?: WaitForSelectorOptions) {
   const run = createWaitForSelectorAndRun(selector, waitOptions);
-  return async <T = any>(page: Page, fn: EvaluateFn<T>, ...args: SerializableOrJSHandle[]) => {
-    const result = await run(page, (el) => page.evaluate<EvaluateFn<T>>(fn, el, ...args));
+  return async <Params extends unknown[], Func extends EvaluateFunc<[ElementHandle<Element>, ...Params[]]> = EvaluateFunc<[ElementHandle<Element>, ...Params[]]>>(page: Page, fn: Func | string, ...args: Params[]) => {
+    const result = await run(page, (el) => page.evaluate(fn, el, ...args));
 
     return result;
   };

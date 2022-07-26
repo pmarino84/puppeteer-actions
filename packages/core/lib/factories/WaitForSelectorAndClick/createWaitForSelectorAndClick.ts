@@ -1,11 +1,7 @@
 import merge from "lodash/merge";
-import { ClickOptions, Page, WaitForSelectorOptions } from "puppeteer";
-import createWaitForSelectorAndRun from "./createWaitForSelectorAndRun";
-
-export type WaitForSelectorAndClickOptions = {
-  waitOptions?: WaitForSelectorOptions;
-  clickOptions?: ClickOptions;
-};
+import { Page } from "puppeteer";
+import createWaitForSelectorAndRun from "../createWaitForSelectorAndRun";
+import { WaitForSelectorAndClickOptions } from "./types";
 
 /**
  * Create a function to click on an element

@@ -1,6 +1,6 @@
 import merge from "lodash/merge";
 import { Page, WaitForSelectorOptions } from "puppeteer";
-import { createWaitForSelectorAndRunEvaluated } from "./createWaitForSelectorAndRunEvaluated";
+import { createWaitForSelectorAndRunEvaluated } from "../createWaitForSelectorAndRunEvaluated";
 
 /**
  * Create a function for click on an element. Use page.evaluate to click on the element inside the browser context directly
@@ -12,7 +12,7 @@ export function createWaitForSelectorAndClickEvaluated(selector: string, waitOpt
   return async function waitForSelectorAndClickEvaluatedInternal(page: Page, overrideWaitOptions?: WaitForSelectorOptions) {
     const internalWaitOptions = merge({}, waitOptions || {}, overrideWaitOptions || {});
     const run = createWaitForSelectorAndRunEvaluated(selector, internalWaitOptions);
-    await run(page, (el) => el.click());
+    await run(page, (el) => (el as HTMLButtonElement).click());
   }
 }
 
