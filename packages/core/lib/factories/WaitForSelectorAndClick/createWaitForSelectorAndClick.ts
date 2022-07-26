@@ -14,7 +14,7 @@ export function createWaitForSelectorAndClick(selector: string, options?: WaitFo
     const internalWaitOptions = merge({}, (options && options.waitOptions) || {}, (overrideOptions && overrideOptions.waitOptions) || {});
     const internalClickOptions = merge({}, (options && options.clickOptions) || {}, (overrideOptions && overrideOptions.clickOptions) || {});
     const run = createWaitForSelectorAndRun(selector, internalWaitOptions);
-    await run(page, (el) => el.click(internalClickOptions));
+    await run(page, (el) => el ? el.click(internalClickOptions) : Promise.resolve());
   }
 }
 
