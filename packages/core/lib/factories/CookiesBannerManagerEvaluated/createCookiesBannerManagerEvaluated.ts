@@ -1,7 +1,7 @@
 import { Page } from "puppeteer";
 import createWaitForSelectorAndClickEvaluated from "../WaitForSelectorAndClickEvaluated/createWaitForSelectorAndClickEvaluated";
-import createWaitForVisible from "../createWaitForVisible";
-import createWaitForVisibleStyled from "../createWaitForVisibleStyled";
+import createWaitForVisible from "../WaitForVisible/createWaitForVisible";
+import createWaitForVisibleStyled from "../WaitForVisibleStyled/createWaitForVisibleStyled";
 import { CookiesBannerManagerEvaluatedOptions } from "./types";
 
 /**

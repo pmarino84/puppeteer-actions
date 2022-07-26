@@ -1,6 +1,6 @@
 import merge from "lodash/merge";
 import { Page, WaitForSelectorOptions } from "puppeteer";
-import createWaitForSelectorAndRun from "./createWaitForSelectorAndRun";
+import createWaitForSelectorAndRun from "../WaitForSelectorAndRun/createWaitForSelectorAndRun";
 
 /**
  * Create a function to select given values
@@ -12,7 +12,7 @@ export function createWaitForSelectorAndSelect(selector: string, waitOptions?: W
   return function waitForSelectorAndSelectInternal(page: Page, values: string[], overrideWaitOptions?: WaitForSelectorOptions) {
     const internalOptions = merge({}, waitOptions || {}, overrideWaitOptions || {});
     const run = createWaitForSelectorAndRun<string[]>(selector, internalOptions);
-    return run(page, (el) => el.select(...values));
+    return run(page, (el) => el ? el.select(...values) : Promise.resolve([]));
   }
 }
 

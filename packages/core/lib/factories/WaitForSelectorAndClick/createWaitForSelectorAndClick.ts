@@ -1,6 +1,6 @@
 import merge from "lodash/merge";
 import { Page } from "puppeteer";
-import createWaitForSelectorAndRun from "../createWaitForSelectorAndRun";
+import createWaitForSelectorAndRun from "../WaitForSelectorAndRun/createWaitForSelectorAndRun";
 import { WaitForSelectorAndClickOptions } from "./types";
 
 /**

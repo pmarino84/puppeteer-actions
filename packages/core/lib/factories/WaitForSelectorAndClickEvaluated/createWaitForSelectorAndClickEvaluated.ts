@@ -1,6 +1,6 @@
 import merge from "lodash/merge";
 import { Page, WaitForSelectorOptions } from "puppeteer";
-import { createWaitForSelectorAndRunEvaluated } from "../createWaitForSelectorAndRunEvaluated";
+import { createWaitForSelectorAndRunEvaluated } from "../WaitForSelectorAndRunEvaluated/createWaitForSelectorAndRunEvaluated";
 
 /**
  * Create a function for click on an element. Use page.evaluate to click on the element inside the browser context directly

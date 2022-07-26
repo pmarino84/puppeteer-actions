@@ -1,15 +1,7 @@
 import merge from "lodash/merge";
-import { Page, WaitForSelectorOptions } from "puppeteer";
-import createWaitForSelectorAndRun from "./createWaitForSelectorAndRun";
-
-export type TypeOptions = {
-  delay: number;
-};
-
-export type WaitForSelectorAndTypeOptions = {
-  waitOptions?: WaitForSelectorOptions;
-  typeOptions?: TypeOptions;
-};
+import { Page } from "puppeteer";
+import createWaitForSelectorAndRun from "../WaitForSelectorAndRun/createWaitForSelectorAndRun";
+import { WaitForSelectorAndTypeOptions } from "./types";
 
 /**
  * Create a function to type given text to an element
@@ -22,7 +14,7 @@ export function createWaitForSelectorAndType(selector: string, options?: WaitFor
     const internalWaitOptions = merge({}, (options && options.waitOptions) || {}, (overrideOptions && overrideOptions.waitOptions) || {});
     const internalTypeOptions = merge({ delay: 10 }, (options && options.typeOptions) || {}, (overrideOptions && overrideOptions.typeOptions) || {});
     const run = createWaitForSelectorAndRun(selector, internalWaitOptions);
-    return run(page, (el) => el.type(text, internalTypeOptions))
+    return run(page, (el) => el ? (el as any).type(text, internalTypeOptions) : undefined)
   }
 }
 

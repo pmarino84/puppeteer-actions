@@ -1,6 +1,6 @@
 import merge from "lodash/merge";
 import { Page, WaitForSelectorOptions } from "puppeteer";
-import createWaitForSelectorAndRunEvaluated from "./createWaitForSelectorAndRunEvaluated";
+import createWaitForSelectorAndRunEvaluated from "../WaitForSelectorAndRunEvaluated/createWaitForSelectorAndRunEvaluated";
 
 /**
  * Create a function to select given values inside browser context directly
@@ -12,8 +12,8 @@ export function createWaitForSelectorAndSelectEvaluated(selector: string, waitOp
   return function waitForSelectorAndSelectEvaluatedInternal(page: Page, values: string[], overrideWaitOptions?: WaitForSelectorOptions) {
     const internalOptions = merge({}, waitOptions || {}, overrideWaitOptions || {});
     const run = createWaitForSelectorAndRunEvaluated(selector, internalOptions);
-    return run(page, (el: HTMLSelectElement) => {
-      const options = el.options;
+    return run(page, (el) => {
+      const options = el ? (el as HTMLSelectElement).options : [];
       const selectOption = (val: string) => {
         for (let i = 0; i < options.length; i++) {
           const el = options[i];

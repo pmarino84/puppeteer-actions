@@ -11,8 +11,8 @@ import { ElementHandle, Page, WaitForSelectorOptions } from "puppeteer";
  * @returns function that wait an element to be visible and call the given callback
  */
 export function createWaitForSelectorAndRun<T = void, E extends Element = Element>(selector: string, waitOptions?: WaitForSelectorOptions) {
-  return async function waitForSelectorAndRunInternal(page: Page, cb: (element: ElementHandle<E>) => Promise<T>) {
-    const el = await page.waitForSelector(selector, waitOptions);
+  return async function waitForSelectorAndRunInternal(page: Page, cb: (element: ElementHandle<E> | null) => Promise<T>) {
+    const el = await page.waitForSelector(selector, waitOptions) as (ElementHandle<E> | null);
     return cb && await cb(el);
   }
 }

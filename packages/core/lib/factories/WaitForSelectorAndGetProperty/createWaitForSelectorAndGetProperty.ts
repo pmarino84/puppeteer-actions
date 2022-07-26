@@ -1,6 +1,6 @@
 import merge from "lodash/merge";
 import { Page, WaitForSelectorOptions } from "puppeteer";
-import createWaitForSelectorAndRun from "./createWaitForSelectorAndRun";
+import createWaitForSelectorAndRun from "../WaitForSelectorAndRun/createWaitForSelectorAndRun";
 
 /**
  * Create a function to retrieve a property of an element
@@ -13,8 +13,8 @@ export function createWaitForSelectorAndGetProperty(selector: string, waitOption
     const internalOptions = merge({}, waitOptions || {}, overrideWaitOptions || {});
     const run = createWaitForSelectorAndRun<V>(selector, internalOptions);
     return run(page, async (el) => {
-      const property = (await el.getProperty(propertyName));
-      const value = await property.jsonValue();
+      const property = (await el?.getProperty(propertyName));
+      const value = await property?.jsonValue();
 
       return value as V;
     });
